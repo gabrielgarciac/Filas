@@ -1,30 +1,36 @@
 class Node:
 
-	#Função inicializadora
+	# Funnção inicializadora
 	def __init__(self, data):
-		self.data = data
-		self.next = None
+		self.data = data 
+		self.next = None 
 
 
-#A classe ListaEncadeada contem um object Node
+#A classe ListaEncadeada contem um objeto Node
 class ListaEncadeada:
 
-	#Função para inicializar a "cabeça" da lista
+	#Função que inicializa a "cabeça" da lista
 	def __init__(self):
 		self.cabeca = None
+
+	#Função para realizar o print da lista
+	def printList(self):
+		temp = self.cabeca
+		while (temp):
+			print (temp.data)
+			temp = temp.next
 
 
 if __name__=='__main__':
 
-	#Começa com a lista vazia
+	#Começa com uma lista vazia
 	llist = ListaEncadeada()
 
 	llist.cabeca = Node(1)
 	segundo = Node(2)
 	terceiro = Node(3)
 
-    #Os 3 nós de exemplo foram criados acima
+	llist.cabeca.next = segundo; # Linka o primeiro nó com o segundo
+	segundo.next = terceiro; # Linka o segundo nó com o  terceiro
 
-	llist.cabeca.next = segundo; #Linka o primeiro nó com o segundo
-
-	segundo.next = terceiro; #Linka segundo nó com o terceiro
+	llist.printList()
